@@ -13,13 +13,17 @@ class DBMainWindow: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        
         if let window = window, let screen = window.screen {
             let screenFrame = screen.visibleFrame
             let x = screenFrame.midX - windowSize.width/2
             let y = screenFrame.midY - windowSize.height/2
             let origin = CGPoint(x: x, y: y)
             window.setFrame(NSRect(origin: origin, size: windowSize), display: true)
+            
+            window.titleVisibility = .hidden
+            window.titlebarAppearsTransparent = true
+            window.styleMask = [window.styleMask, .fullSizeContentView]
         }
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
 }
