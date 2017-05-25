@@ -752,8 +752,8 @@
                                         <collectionView id="giu-sA-7rL">
                                             <rect key="frame" x="0.0" y="0.0" width="726" height="650"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="kqY-wl-lhe">
-                                                <size key="itemSize" width="50" height="50"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="kqY-wl-lhe" customClass="DBMovieFlowLayout" customModule="DouBanMovie" customModuleProvider="target">
+                                                <size key="itemSize" width="65" height="123"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </collectionView>
@@ -784,6 +784,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="movieCollectionView" destination="giu-sA-7rL" id="d3d-ix-wTn"/>
                         <outlet property="placeholderView" destination="GUJ-mE-3zH" id="k1q-V6-8wJ"/>
                         <outlet property="tableView" destination="CEd-9J-zD7" id="4kX-wq-qSd"/>
                     </connections>

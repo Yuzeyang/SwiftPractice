@@ -11,18 +11,21 @@ import Cocoa
 class DBMainViewController: NSViewController {
     let actionItem: [String] = ["正在热映", "即将上映", "Top250", "口碑榜", "北美票房榜", "新片榜"]
     
+    @IBOutlet weak var placeholderView: NSView!
     @IBOutlet weak var tableView: NSTableView! {
         didSet {
             tableView.register(NSNib(nibNamed: "ActionCell", bundle: nil), forIdentifier: "ActionTitle")
         }
     }
-    @IBOutlet weak var placeholderView: NSView!
+    @IBOutlet weak var movieCollectionView: NSCollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        movieCollectionView.delegate = self
+        //movieCollectionView.dataSource = self
     }
     
     override func viewDidAppear() {
@@ -55,3 +58,10 @@ extension DBMainViewController: NSTableViewDataSource {
     }
 }
 
+extension DBMainViewController: NSCollectionViewDelegate {
+    
+}
+
+/*extension DBMainViewController: NSCollectionViewDataSource {
+    
+}*/
