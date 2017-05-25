@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B26F5BB1ED6707A0073DBFD /* DBMovieFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5BA1ED6707A0073DBFD /* DBMovieFlowLayout.swift */; };
+		5B26F5C11ED670FA0073DBFD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5BF1ED670FA0073DBFD /* ActionCell.xib */; };
+		5B26F5C21ED670FA0073DBFD /* MovieFlowLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5C01ED670FA0073DBFD /* MovieFlowLayout.xib */; };
 		5B2BB99E1ED3E254004FE98E /* DBMainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2BB99D1ED3E254004FE98E /* DBMainWindow.swift */; };
 		5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */; };
 		5B62B3CC1ED3189E00BCD1FC /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62B3CB1ED3189E00BCD1FC /* DBMainViewController.swift */; };
 		5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */; };
 		5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */; };
-		5B62B3D91ED31C6200BCD1FC /* DBSideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62B3D81ED31C6200BCD1FC /* DBSideBar.swift */; };
-		5BDA8F9C1ED57B1200412BC1 /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDA8F9B1ED57B1200412BC1 /* ActionCell.xib */; };
 		5BDA8F9E1ED57BEA00412BC1 /* DBActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA8F9D1ED57BEA00412BC1 /* DBActionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B26F5BA1ED6707A0073DBFD /* DBMovieFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieFlowLayout.swift; sourceTree = "<group>"; };
+		5B26F5BF1ED670FA0073DBFD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
+		5B26F5C01ED670FA0073DBFD /* MovieFlowLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieFlowLayout.xib; sourceTree = "<group>"; };
 		5B2BB99D1ED3E254004FE98E /* DBMainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMainWindow.swift; sourceTree = "<group>"; };
 		5B62B3C61ED3189E00BCD1FC /* DouBanMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouBanMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -25,8 +29,6 @@
 		5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B62B3D01ED3189E00BCD1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B62B3D21ED3189E00BCD1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B62B3D81ED31C6200BCD1FC /* DBSideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSideBar.swift; sourceTree = "<group>"; };
-		5BDA8F9B1ED57B1200412BC1 /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		5BDA8F9D1ED57BEA00412BC1 /* DBActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBActionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B26F5BE1ED670FA0073DBFD /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				5B26F5BF1ED670FA0073DBFD /* ActionCell.xib */,
+				5B26F5C01ED670FA0073DBFD /* MovieFlowLayout.xib */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
 		5B62B3BD1ED3189E00BCD1FC = {
 			isa = PBXGroup;
 			children = (
@@ -60,14 +71,14 @@
 		5B62B3C81ED3189E00BCD1FC /* DouBanMovie */ = {
 			isa = PBXGroup;
 			children = (
+				5B26F5BE1ED670FA0073DBFD /* sources */,
+				5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */,
+				5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */,
 				5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */,
 				5B2BB99D1ED3E254004FE98E /* DBMainWindow.swift */,
 				5B62B3CB1ED3189E00BCD1FC /* DBMainViewController.swift */,
-				5B62B3D81ED31C6200BCD1FC /* DBSideBar.swift */,
 				5BDA8F9D1ED57BEA00412BC1 /* DBActionCell.swift */,
-				5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */,
-				5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */,
-				5BDA8F9B1ED57B1200412BC1 /* ActionCell.xib */,
+				5B26F5BA1ED6707A0073DBFD /* DBMovieFlowLayout.swift */,
 				5B62B3D21ED3189E00BCD1FC /* Info.plist */,
 			);
 			path = DouBanMovie;
@@ -135,7 +146,8 @@
 			files = (
 				5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */,
 				5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */,
-				5BDA8F9C1ED57B1200412BC1 /* ActionCell.xib in Resources */,
+				5B26F5C21ED670FA0073DBFD /* MovieFlowLayout.xib in Resources */,
+				5B26F5C11ED670FA0073DBFD /* ActionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +160,7 @@
 			files = (
 				5BDA8F9E1ED57BEA00412BC1 /* DBActionCell.swift in Sources */,
 				5B2BB99E1ED3E254004FE98E /* DBMainWindow.swift in Sources */,
-				5B62B3D91ED31C6200BCD1FC /* DBSideBar.swift in Sources */,
+				5B26F5BB1ED6707A0073DBFD /* DBMovieFlowLayout.swift in Sources */,
 				5B62B3CC1ED3189E00BCD1FC /* DBMainViewController.swift in Sources */,
 				5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */,
 			);

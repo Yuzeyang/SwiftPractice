@@ -16,11 +16,18 @@ class DBMainViewController: NSViewController {
             tableView.register(NSNib(nibNamed: "ActionCell", bundle: nil), forIdentifier: "ActionTitle")
         }
     }
+    @IBOutlet weak var placeholderView: NSView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        placeholderView.layer?.backgroundColor = NSColor.init(deviceRed: 21.0/255.0, green: 30.0/255.0, blue: 37.0/255.0, alpha: 1.0).cgColor
     }
     
     override var representedObject: Any? {
@@ -35,6 +42,10 @@ extension DBMainViewController: NSTableViewDelegate {
         guard let cell = tableView.make(withIdentifier: "ActionTitle", owner: self) as? DBActionCell else { return nil }
         cell.title.stringValue = actionItem[row]
         return cell
+    }
+    
+    func tableView(_ tableView: NSTableView, didClick tableColumn: NSTableColumn) {
+        let _ = 123
     }
 }
 
