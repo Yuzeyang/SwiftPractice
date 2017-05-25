@@ -11,10 +11,4 @@ import Alamofire
 
 class DBMovieService: NSObject {
     let baseURL = "https://api.douban.com"
-    
-    typealias InTheaterBlock = (title: String, total: Int, start: Int, count: Int, subjects: String) -> Void
-    
-    func getInTheatersMovieWith(city: String) -> InTheaterBlock {
-        Alamofire.get
-    }
 }

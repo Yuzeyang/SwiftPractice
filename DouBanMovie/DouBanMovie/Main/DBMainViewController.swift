@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Alamofire
 
 class DBMainViewController: NSViewController {
     let actionItem: [String] = ["正在热映", "即将上映", "Top250", "口碑榜", "北美票房榜", "新片榜"]
@@ -26,6 +27,8 @@ class DBMainViewController: NSViewController {
         tableView.dataSource = self
         movieCollectionView.delegate = self
         //movieCollectionView.dataSource = self
+        
+        
     }
     
     override func viewDidAppear() {
@@ -38,6 +41,13 @@ class DBMainViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    /*func getInTheatersMovieWith(city: String) ->  () -> Void {
+        Alamofire.request("https://api.douban.com", method: .get, parameters: ["city": city], encoding: URLEncoding.default, headers: nil)
+            .responseJSON { response in
+                print(response)
+        }
+    }*/
 }
 
 extension DBMainViewController: NSTableViewDelegate {
