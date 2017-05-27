@@ -17,6 +17,7 @@ fileprivate let itemReuseId = "MovieItem"
 class DBMainViewController: NSViewController {
     let actionItem: [String] = ["正在热映", "即将上映", "Top250", "口碑榜", "北美票房榜", "新片榜"]
     var movieList: [DBMovieModel] = []
+    var currentIndex = 0
     
     @IBOutlet weak var placeholderView: NSView!
     @IBOutlet weak var tableView: NSTableView! {
@@ -27,11 +28,11 @@ class DBMainViewController: NSViewController {
     @IBOutlet weak var movieCollectionView: NSCollectionView! {
         didSet {
             movieCollectionView.register(DBMovieItem.self, forItemWithIdentifier: itemReuseId)
+            
             let flowLayout = movieCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout
             flowLayout?.itemSize = NSSize(width: 130, height: 263)
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +41,6 @@ class DBMainViewController: NSViewController {
         tableView.dataSource = self
         movieCollectionView.delegate = self
         movieCollectionView.dataSource = self
-        
-        setCollectionView()
-        getInTheatersMovie()
     }
     
     override func viewDidAppear() {
@@ -55,54 +53,43 @@ class DBMainViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    
-    /*func getInTheatersMovieWith(city: String) ->  () -> Void {
-        Alamofire.request("https://api.douban.com", method: .get, parameters: ["city": city], encoding: URLEncoding.default, headers: nil)
-            .responseJSON { response in
-                print(response)
-        }
-    }*/
 }
 
 extension DBMainViewController {
-    fileprivate func setCollectionView() {
-        
+    fileprivate func getInTheatersMovie() {
+        DBMovieService.getInTheatersMovieWith("杭州") { [weak self](error, data) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.movieList.removeAll()
+            self?.movieList = data!
+            self?.movieCollectionView.reloadData()
+        }
     }
     
-    fileprivate func getInTheatersMovie() {
-        let params: Parameters = ["city": "杭州"]
-        Alamofire.request("https://api.douban.com/v2/movie/in_theaters", method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
-            .responseJSON { response in
-                guard let result = response.result.value as? [String: Any] else { return }
-                let movies = result["subjects"] as Any
-                let movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
-                if movieList != nil {
-                    self.movieList = movieList!
-                    self.movieCollectionView.reloadData()
-                }
-                
-                
-               
-                
-                
-               /* if let result = response.result.value as? [String: Any] {
-                    print(result)
-                    let movies = result["subjects"] as! NSDictionary? as? [AnyHashable: Any] ?? [:]
-                    for element in movies {
-                        let movie = DBMovieModel.yy_model(with: element)
-                        
-                    }
-                }*/
+    fileprivate func getComingSoonMovie() {
+        DBMovieService.getComingSoonWith(0, count: 20) { [weak self](error, data) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.movieList.removeAll()
+            self?.movieList = data!
+            self?.movieCollectionView.reloadData()
         }
-        
-        
-        /*let movie = DBMovieModel()
-        movie.cover = "https://img3.doubanio.com/spic/s1747553.jpg"
-        movie.name = "满月之夜白鲸现"
-        movie.type = "7.0"
-        movie.duration = "2016"
-        
-        movieList = Array.init(repeating: movie, count: 100) */
+    }
+    
+    fileprivate func getTop250Movie() {
+        DBMovieService.getTop250With(0, count: 20) { [weak self](error, data) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.movieList.removeAll()
+            self?.movieList = data!
+            self?.movieCollectionView.reloadData()
+        }
     }
 }
 
@@ -113,9 +100,29 @@ extension DBMainViewController: NSTableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: NSTableView, didClick tableColumn: NSTableColumn) {
-        let _ = 123
+    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
+        var index = currentIndex
+        if proposedSelectionIndexes.first! != Optional.none {
+           index = proposedSelectionIndexes.first!
+        }
+        switch index {
+        case 0:
+            getInTheatersMovie()
+            break
+        case 1:
+            getComingSoonMovie()
+            break
+        case 2:
+            getTop250Movie()
+            break
+        default:
+            print("unknow type")
+            break
+        }
+        
+        return proposedSelectionIndexes
     }
+
 }
 
 extension DBMainViewController: NSTableViewDataSource {
