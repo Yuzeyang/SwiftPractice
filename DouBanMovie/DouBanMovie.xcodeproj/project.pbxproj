@@ -15,6 +15,9 @@
 		5B26F5D11ED676520073DBFD /* DBMovieFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5CF1ED676520073DBFD /* DBMovieFlowLayout.swift */; };
 		5B26F5E71ED67BA10073DBFD /* DBMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5E61ED67BA10073DBFD /* DBMovieService.swift */; };
 		5B26F5EC1ED694B70073DBFD /* Pods_DouBanMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B26F5EB1ED694B70073DBFD /* Pods_DouBanMovie.framework */; };
+		5B26F5F51ED701130073DBFD /* DBMovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5F31ED701130073DBFD /* DBMovieItem.swift */; };
+		5B26F5F61ED701130073DBFD /* DBMovieItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5F41ED701130073DBFD /* DBMovieItem.xib */; };
+		5B26F5F81ED7CD7D0073DBFD /* DBMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5F71ED7CD7D0073DBFD /* DBMovieModel.swift */; };
 		5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */; };
 		5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */; };
 		5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 		5B26F5E91ED694950073DBFD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		5B26F5EB1ED694B70073DBFD /* Pods_DouBanMovie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_DouBanMovie.framework; path = "Pods/../build/Debug-iphoneos/Pods_DouBanMovie.framework"; sourceTree = "<group>"; };
 		5B26F5F01ED6996F0073DBFD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		5B26F5F31ED701130073DBFD /* DBMovieItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieItem.swift; sourceTree = "<group>"; };
+		5B26F5F41ED701130073DBFD /* DBMovieItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBMovieItem.xib; sourceTree = "<group>"; };
+		5B26F5F71ED7CD7D0073DBFD /* DBMovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieModel.swift; sourceTree = "<group>"; };
 		5B62B3C61ED3189E00BCD1FC /* DouBanMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouBanMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 				5B26F5CF1ED676520073DBFD /* DBMovieFlowLayout.swift */,
 				5B26F5CA1ED675EF0073DBFD /* ActionCell.xib */,
 				5B26F5CB1ED675EF0073DBFD /* MovieFlowLayout.xib */,
+				5B26F5F31ED701130073DBFD /* DBMovieItem.swift */,
+				5B26F5F41ED701130073DBFD /* DBMovieItem.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		5B26F5E81ED687460073DBFD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B26F5F71ED7CD7D0073DBFD /* DBMovieModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */,
+				5B26F5F61ED701130073DBFD /* DBMovieItem.xib in Resources */,
 				5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */,
 				5B26F5CD1ED675EF0073DBFD /* MovieFlowLayout.xib in Resources */,
 				5B26F5CC1ED675EF0073DBFD /* ActionCell.xib in Resources */,
@@ -279,9 +289,11 @@
 				5B26F5E71ED67BA10073DBFD /* DBMovieService.swift in Sources */,
 				5B26F5C91ED675C50073DBFD /* DBMainWindow.swift in Sources */,
 				5B26F5D01ED676520073DBFD /* DBActionCell.swift in Sources */,
+				5B26F5F81ED7CD7D0073DBFD /* DBMovieModel.swift in Sources */,
 				5B26F5D11ED676520073DBFD /* DBMovieFlowLayout.swift in Sources */,
 				5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */,
 				5B26F5C81ED675C50073DBFD /* DBMainViewController.swift in Sources */,
+				5B26F5F51ED701130073DBFD /* DBMovieItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,4 +4,6 @@ use_frameworks!
 
 target 'DouBanMovie' do
     pod 'Alamofire'
+    pod 'SDWebImage'
+    pod 'YYModel'
 end
