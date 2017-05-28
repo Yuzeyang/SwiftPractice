@@ -91,6 +91,18 @@ extension DBMainViewController {
             self?.movieCollectionView.reloadData()
         }
     }
+    
+    fileprivate func getWeeklyMovie() {
+        DBMovieService.getWeeklyMovieWith { [weak self](error, data) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.movieList.removeAll()
+            self?.movieList = data!
+            self?.movieCollectionView.reloadData()
+        }
+    }
 }
 
 extension DBMainViewController: NSTableViewDelegate {
@@ -114,6 +126,9 @@ extension DBMainViewController: NSTableViewDelegate {
             break
         case 2:
             getTop250Movie()
+            break
+        case 3:
+            getWeeklyMovie()
             break
         default:
             print("unknow type")
