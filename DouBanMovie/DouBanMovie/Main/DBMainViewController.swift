@@ -103,6 +103,30 @@ extension DBMainViewController {
             self?.movieCollectionView.reloadData()
         }
     }
+    
+    fileprivate func getUSBoxMovie() {
+        DBMovieService.getUSBoxMovieWith { [weak self](error, data) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.movieList.removeAll()
+            self?.movieList = data!
+            self?.movieCollectionView.reloadData()
+        }
+    }
+    
+    fileprivate func getNewxMovie() {
+        DBMovieService.getNewMovieWith { [weak self](error, data) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self?.movieList.removeAll()
+            self?.movieList = data!
+            self?.movieCollectionView.reloadData()
+        }
+    }
 }
 
 extension DBMainViewController: NSTableViewDelegate {
@@ -129,6 +153,12 @@ extension DBMainViewController: NSTableViewDelegate {
             break
         case 3:
             getWeeklyMovie()
+            break
+        case 4:
+            getUSBoxMovie()
+            break
+        case 5:
+            getNewxMovie()
             break
         default:
             print("unknow type")

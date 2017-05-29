@@ -18,6 +18,7 @@
 		5B26F5F51ED701130073DBFD /* DBMovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5F31ED701130073DBFD /* DBMovieItem.swift */; };
 		5B26F5F61ED701130073DBFD /* DBMovieItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5F41ED701130073DBFD /* DBMovieItem.xib */; };
 		5B26F5F81ED7CD7D0073DBFD /* DBMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5F71ED7CD7D0073DBFD /* DBMovieModel.swift */; };
+		5B26F5FA1EDA5CE70073DBFD /* DBBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5F91EDA5CE70073DBFD /* DBBoxModel.swift */; };
 		5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */; };
 		5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */; };
 		5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		5B26F5F31ED701130073DBFD /* DBMovieItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieItem.swift; sourceTree = "<group>"; };
 		5B26F5F41ED701130073DBFD /* DBMovieItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBMovieItem.xib; sourceTree = "<group>"; };
 		5B26F5F71ED7CD7D0073DBFD /* DBMovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieModel.swift; sourceTree = "<group>"; };
+		5B26F5F91EDA5CE70073DBFD /* DBBoxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBoxModel.swift; sourceTree = "<group>"; };
 		5B62B3C61ED3189E00BCD1FC /* DouBanMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouBanMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5B26F5F71ED7CD7D0073DBFD /* DBMovieModel.swift */,
+				5B26F5F91EDA5CE70073DBFD /* DBBoxModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */,
 				5B26F5C81ED675C50073DBFD /* DBMainViewController.swift in Sources */,
 				5B26F5F51ED701130073DBFD /* DBMovieItem.swift in Sources */,
+				5B26F5FA1EDA5CE70073DBFD /* DBBoxModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
