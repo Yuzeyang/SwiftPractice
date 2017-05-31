@@ -15,7 +15,8 @@ fileprivate let cellReuseId = "ActionTitle"
 fileprivate let itemReuseId = "MovieItem"
 
 class DBMainViewController: NSViewController {
-    let actionItem: [String] = ["正在热映", "即将上映", "Top250", "口碑榜", "北美票房榜", "新片榜"]
+    // "口碑榜" and "新片榜" 需要申请权限
+    let actionItem: [String] = ["正在热映", "即将上映", "Top250", "北美票房榜"]
     var movieList: [DBMovieModel] = []
     var currentIndex = 0
     
@@ -92,7 +93,7 @@ extension DBMainViewController {
         }
     }
     
-    fileprivate func getWeeklyMovie() {
+    /*fileprivate func getWeeklyMovie() {
         DBMovieService.getWeeklyMovieWith { [weak self](error, data) -> Void in
             if error != nil {
                 print(error!.localizedDescription)
@@ -102,7 +103,7 @@ extension DBMainViewController {
             self?.movieList = data!
             self?.movieCollectionView.reloadData()
         }
-    }
+    }*/
     
     fileprivate func getUSBoxMovie() {
         DBMovieService.getUSBoxMovieWith { [weak self](error, data) -> Void in
@@ -116,7 +117,7 @@ extension DBMainViewController {
         }
     }
     
-    fileprivate func getNewxMovie() {
+    /*fileprivate func getNewxMovie() {
         DBMovieService.getNewMovieWith { [weak self](error, data) -> Void in
             if error != nil {
                 print(error!.localizedDescription)
@@ -126,7 +127,7 @@ extension DBMainViewController {
             self?.movieList = data!
             self?.movieCollectionView.reloadData()
         }
-    }
+    }*/
 }
 
 extension DBMainViewController: NSTableViewDelegate {
@@ -151,15 +152,15 @@ extension DBMainViewController: NSTableViewDelegate {
         case 2:
             getTop250Movie()
             break
-        case 3:
+        /*case 3:
             getWeeklyMovie()
-            break
-        case 4:
+            break*/
+        case 3:
             getUSBoxMovie()
             break
-        case 5:
+        /*case 5:
             getNewxMovie()
-            break
+            break*/
         default:
             print("unknow type")
             break

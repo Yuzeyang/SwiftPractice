@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DouBanMovie/Main/DBMovieService.swift"
-            timestampString = "517656534.844194"
+            timestampString = "517890995.510344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "getUSBoxMovieWith(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DouBanMovie/Main/DBMovieService.swift"
-            timestampString = "517656588.037789"
+            timestampString = "517890995.510344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "getUSBoxMovieWith(_:)"
             landmarkType = "7">
             <Locations>
@@ -42,11 +42,11 @@
                   moduleName = "DouBanMovie"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yzy/Documents/GitHub/SwiftPractice/DouBanMovie/DouBanMovie/Main/DBMovieService.swift"
-                  timestampString = "517657163.166021"
+                  timestampString = "517752239.262189"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
                   offsetFromSymbolStart = "2612">
                </Location>
                <Location
@@ -57,11 +57,11 @@
                   moduleName = "DouBanMovie"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yzy/Documents/GitHub/SwiftPractice/DouBanMovie/DouBanMovie/Main/DBMovieService.swift"
-                  timestampString = "517657163.169177"
+                  timestampString = "517752239.268053"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
                   offsetFromSymbolStart = "19">
                </Location>
             </Locations>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DouBanMovie/Main/DBMovieService.swift"
-            timestampString = "517657159.603251"
+            timestampString = "517890995.510344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "getInTheatersMovieWith(_:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DouBanMovie/Main/DBMovieService.swift"
-            timestampString = "517657218.551906"
+            timestampString = "517890995.510344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "getUSBoxMovieWith(_:)"
             landmarkType = "7">
          </BreakpointContent>

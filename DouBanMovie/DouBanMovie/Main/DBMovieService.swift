@@ -34,20 +34,12 @@ class DBMovieService: NSObject {
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
                 
-                guard let result = response.result.value as? [String: Any] else {
-                    let error = NSError.init(domain: NSURLErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "数据请求失败/(ㄒoㄒ)/~~"])
+                if let error = handleError(response) {
                     callback(error, movieList)
                     return
                 }
                 
-                if let code = result["code"] {
-                    let msg = result["msg"] as! String
-                    let error = NSError.init(domain: NSURLErrorDomain, code: code as! Int, userInfo: [NSLocalizedDescriptionKey: msg])
-                    callback(error, movieList)
-                    return
-                }
-                
-                let movies = result["subjects"] as Any
+                let movies = (response.result.value as! [String: Any])["subjects"] as Any
                 movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
                 callback(nil, movieList)
         }
@@ -60,20 +52,12 @@ class DBMovieService: NSObject {
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
                 
-                guard let result = response.result.value as? [String: Any] else {
-                    let error = NSError.init(domain: NSURLErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "数据请求失败/(ㄒoㄒ)/~~"])
+                if let error = handleError(response) {
                     callback(error, movieList)
                     return
                 }
                 
-                if let code = result["code"] {
-                    let msg = result["msg"] as! String
-                    let error = NSError.init(domain: NSURLErrorDomain, code: code as! Int, userInfo: [NSLocalizedDescriptionKey: msg])
-                    callback(error, movieList)
-                    return
-                }
-                
-                let movies = result["subjects"] as Any
+                let movies = (response.result.value as! [String: Any])["subjects"] as Any
                 movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
                 callback(nil, movieList)
             }
@@ -86,20 +70,12 @@ class DBMovieService: NSObject {
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
                 
-                guard let result = response.result.value as? [String: Any] else {
-                    let error = NSError.init(domain: NSURLErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "数据请求失败/(ㄒoㄒ)/~~"])
+                if let error = handleError(response) {
                     callback(error, movieList)
                     return
                 }
                 
-                if let code = result["code"] {
-                    let msg = result["msg"] as! String
-                    let error = NSError.init(domain: NSURLErrorDomain, code: code as! Int, userInfo: [NSLocalizedDescriptionKey: msg])
-                    callback(error, movieList)
-                    return
-                }
-                
-                let movies = result["subjects"] as Any
+                let movies = (response.result.value as! [String: Any])["subjects"] as Any
                 movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
                 callback(nil, movieList)
         }
@@ -111,20 +87,12 @@ class DBMovieService: NSObject {
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
                 
-                guard let result = response.result.value as? [String: Any] else {
-                    let error = NSError.init(domain: NSURLErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "数据请求失败/(ㄒoㄒ)/~~"])
+                if let error = handleError(response) {
                     callback(error, movieList)
                     return
                 }
                 
-                if let code = result["code"] {
-                    let msg = result["msg"] as! String
-                    let error = NSError.init(domain: NSURLErrorDomain, code: code as! Int, userInfo: [NSLocalizedDescriptionKey: msg])
-                    callback(error, movieList)
-                    return
-                }
-                
-                let movies = result["subjects"] as Any
+                let movies = (response.result.value as! [String: Any])["subjects"] as Any
                 movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
                 callback(nil, movieList)
         }
@@ -164,22 +132,29 @@ class DBMovieService: NSObject {
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
                 
-                guard let result = response.result.value as? [String: Any] else {
-                    let error = NSError.init(domain: NSURLErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "数据请求失败/(ㄒoㄒ)/~~"])
+                if let error = handleError(response) {
                     callback(error, movieList)
                     return
                 }
                 
-                if let code = result["code"] {
-                    let msg = result["msg"] as! String
-                    let error = NSError.init(domain: NSURLErrorDomain, code: code as! Int, userInfo: [NSLocalizedDescriptionKey: msg])
-                    callback(error, movieList)
-                    return
-                }
-                
-                let movies = result["subjects"] as Any
+                let movies = (response.result.value as! [String: Any])["subjects"] as Any
                 movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
                 callback(nil, movieList)
         }
+    }
+    
+    fileprivate class func handleError(_ response: DataResponse<Any>) -> NSError? {
+        var error: NSError? = nil
+        guard let result = response.result.value as? [String: Any] else {
+            error = NSError.init(domain: NSURLErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "数据请求失败/(ㄒoㄒ)/~~"])
+            return error
+        }
+        
+        if let code = result["code"] {
+            let msg = result["msg"] as! String
+            error = NSError.init(domain: NSURLErrorDomain, code: code as! Int, userInfo: [NSLocalizedDescriptionKey: msg])
+            return error
+        }
+        return error
     }
 }
