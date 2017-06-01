@@ -9,8 +9,8 @@
 import Cocoa
 
 class DBBoxModel: NSObject {
-    var rank: Int?
-    var box: Int?
-    var new: Bool?
+    var rank: Int = 0
+    var box: Int = 0
+    var new: Bool = true
     var subject: DBMovieModel?
 }

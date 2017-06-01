@@ -14,9 +14,34 @@ import YYModel
 fileprivate let cellReuseId = "ActionTitle"
 fileprivate let itemReuseId = "MovieItem"
 
-class DBMainViewController: NSViewController {
+enum DBMovieType: String {
     // "口碑榜" and "新片榜" 需要申请权限
-    let actionItem: [String] = ["正在热映", "即将上映", "Top250", "北美票房榜"]
+    case InTheaters = "正在热映"
+    case ComingSoon = "即将上映"
+    case Top250 = "Top250"
+    case USBox = "北美票房榜"
+    
+    static var count: Int {
+        return DBMovieType.USBox.hashValue + 1
+    }
+
+    static func valueWith(_ raw: Int) -> DBMovieType? {
+        switch raw {
+        case 0:
+            return .InTheaters
+        case 1:
+            return .ComingSoon
+        case 2:
+            return .Top250
+        case 3:
+            return .USBox
+        default:
+            return nil
+        }
+    }
+}
+
+class DBMainViewController: NSViewController {
     var movieList: [DBMovieModel] = []
     var currentIndex = 0
     
@@ -133,7 +158,7 @@ extension DBMainViewController {
 extension DBMainViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.make(withIdentifier: cellReuseId, owner: self) as? DBActionCell else { return nil }
-        cell.title.stringValue = actionItem[row]
+        cell.title.stringValue = (DBMovieType.valueWith(row)?.rawValue)!
         return cell
     }
     
@@ -173,7 +198,7 @@ extension DBMainViewController: NSTableViewDelegate {
 
 extension DBMainViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return actionItem.count
+        return DBMovieType.count
     }
 }
 
