@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		5B26F5C81ED675C50073DBFD /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5C61ED675C50073DBFD /* DBMainViewController.swift */; };
 		5B26F5C91ED675C50073DBFD /* DBMainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5C71ED675C50073DBFD /* DBMainWindow.swift */; };
-		5B26F5CC1ED675EF0073DBFD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5CA1ED675EF0073DBFD /* ActionCell.xib */; };
-		5B26F5CD1ED675EF0073DBFD /* MovieFlowLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5CB1ED675EF0073DBFD /* MovieFlowLayout.xib */; };
+		5B26F5CC1ED675EF0073DBFD /* DBActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5CA1ED675EF0073DBFD /* DBActionCell.xib */; };
+		5B26F5CD1ED675EF0073DBFD /* DBMovieFlowLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B26F5CB1ED675EF0073DBFD /* DBMovieFlowLayout.xib */; };
 		5B26F5D01ED676520073DBFD /* DBActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5CE1ED676520073DBFD /* DBActionCell.swift */; };
 		5B26F5D11ED676520073DBFD /* DBMovieFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5CF1ED676520073DBFD /* DBMovieFlowLayout.swift */; };
 		5B26F5E71ED67BA10073DBFD /* DBMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26F5E61ED67BA10073DBFD /* DBMovieService.swift */; };
@@ -29,8 +29,8 @@
 		1761BF158FB4483F234975BA /* Pods-DouBanMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanMovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanMovie/Pods-DouBanMovie.release.xcconfig"; sourceTree = "<group>"; };
 		5B26F5C61ED675C50073DBFD /* DBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
 		5B26F5C71ED675C50073DBFD /* DBMainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMainWindow.swift; sourceTree = "<group>"; };
-		5B26F5CA1ED675EF0073DBFD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
-		5B26F5CB1ED675EF0073DBFD /* MovieFlowLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieFlowLayout.xib; sourceTree = "<group>"; };
+		5B26F5CA1ED675EF0073DBFD /* DBActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBActionCell.xib; sourceTree = "<group>"; };
+		5B26F5CB1ED675EF0073DBFD /* DBMovieFlowLayout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBMovieFlowLayout.xib; sourceTree = "<group>"; };
 		5B26F5CE1ED676520073DBFD /* DBActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBActionCell.swift; sourceTree = "<group>"; };
 		5B26F5CF1ED676520073DBFD /* DBMovieFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieFlowLayout.swift; sourceTree = "<group>"; };
 		5B26F5E61ED67BA10073DBFD /* DBMovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieService.swift; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				5B26F5CE1ED676520073DBFD /* DBActionCell.swift */,
+				5B26F5CA1ED675EF0073DBFD /* DBActionCell.xib */,
 				5B26F5CF1ED676520073DBFD /* DBMovieFlowLayout.swift */,
-				5B26F5CA1ED675EF0073DBFD /* ActionCell.xib */,
-				5B26F5CB1ED675EF0073DBFD /* MovieFlowLayout.xib */,
+				5B26F5CB1ED675EF0073DBFD /* DBMovieFlowLayout.xib */,
 				5B26F5F31ED701130073DBFD /* DBMovieItem.swift */,
 				5B26F5F41ED701130073DBFD /* DBMovieItem.xib */,
 			);
@@ -229,8 +229,8 @@
 				5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */,
 				5B26F5F61ED701130073DBFD /* DBMovieItem.xib in Resources */,
 				5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */,
-				5B26F5CD1ED675EF0073DBFD /* MovieFlowLayout.xib in Resources */,
-				5B26F5CC1ED675EF0073DBFD /* ActionCell.xib in Resources */,
+				5B26F5CD1ED675EF0073DBFD /* DBMovieFlowLayout.xib in Resources */,
+				5B26F5CC1ED675EF0073DBFD /* DBActionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

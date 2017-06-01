@@ -48,7 +48,7 @@ class DBMainViewController: NSViewController {
     @IBOutlet weak var placeholderView: NSView!
     @IBOutlet weak var tableView: NSTableView! {
         didSet {
-            tableView.register(NSNib(nibNamed: "ActionCell", bundle: nil), forIdentifier: "ActionTitle")
+            tableView.register(NSNib(nibNamed: "DBActionCell", bundle: nil), forIdentifier: "ActionTitle")
         }
     }
     @IBOutlet weak var movieCollectionView: NSCollectionView! {
@@ -164,8 +164,8 @@ extension DBMainViewController: NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
         var index = currentIndex
-        if proposedSelectionIndexes.first! != Optional.none {
-           index = proposedSelectionIndexes.first!
+        if proposedSelectionIndexes.first != nil {
+            index = proposedSelectionIndexes.first!
         }
         switch index {
         case 0:

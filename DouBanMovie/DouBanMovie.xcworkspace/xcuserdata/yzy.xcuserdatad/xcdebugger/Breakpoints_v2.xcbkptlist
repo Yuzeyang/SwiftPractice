@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "getUSBoxMovieWith(_:)"
-            landmarkType = "7">
+            endingLineNumber = "161">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -31,7 +29,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "getUSBoxMovieWith(_:)"
+            landmarkName = "handleError(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -79,7 +77,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "getInTheatersMovieWith(_:callback:)"
+            landmarkName = "getComingSoonWith(_:count:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +93,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
             endingLineNumber = "156"
-            landmarkName = "getUSBoxMovieWith(_:)"
+            landmarkName = "handleError(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
