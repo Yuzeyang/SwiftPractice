@@ -10,6 +10,7 @@ import Cocoa
 import Alamofire
 import SDWebImage
 import YYModel
+import SnapKit
 
 fileprivate let cellReuseId = "ActionTitle"
 fileprivate let itemReuseId = "MovieItem"
@@ -45,7 +46,7 @@ class DBMainViewController: NSViewController {
     var movieList: [DBMovieModel] = []
     var currentIndex = 0
     
-    @IBOutlet weak var placeholderView: NSView!
+    var movieSearchView: DBSearchView?
     @IBOutlet weak var tableView: NSTableView! {
         didSet {
             tableView.register(NSNib(nibNamed: "DBActionCell", bundle: nil), forIdentifier: "ActionTitle")
@@ -62,16 +63,11 @@ class DBMainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        movieCollectionView.delegate = self
-        movieCollectionView.dataSource = self
+        initUI()
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        placeholderView.layer?.backgroundColor = NSColor.init(deviceRed: 21.0/255.0, green: 30.0/255.0, blue: 37.0/255.0, alpha: 1.0).cgColor
     }
     
     override var representedObject: Any? {
@@ -82,6 +78,22 @@ class DBMainViewController: NSViewController {
 }
 
 extension DBMainViewController {
+    fileprivate func initUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        movieCollectionView.delegate = self
+        movieCollectionView.dataSource = self
+        
+        movieSearchView = try! DBSearchView.view(withOwner: self) as! DBSearchView
+        self.view.addSubview(movieSearchView!)
+        movieSearchView?.snp.makeConstraints({ (make) -> Void in
+            make.left.top.equalTo(0)
+            make.width.equalTo(174)
+            make.height.equalTo(84)
+        })
+    }
+    
+    
     fileprivate func getInTheatersMovie() {
         DBMovieService.getInTheatersMovieWith("杭州") { [weak self](error, data) -> Void in
             if error != nil {

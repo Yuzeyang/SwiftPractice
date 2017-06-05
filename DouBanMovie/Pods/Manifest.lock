@@ -3,18 +3,21 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SnapKit (3.2.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
   - SDWebImage
+  - SnapKit (~> 3.2.0)
   - YYModel
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: abf750c563f5c2a9e0f4f17764dfc8e7fea2eeba
+PODFILE CHECKSUM: d55a6eb9eaf62885d36e4e4b40672dfaafc3e73e
 
 COCOAPODS: 1.1.1

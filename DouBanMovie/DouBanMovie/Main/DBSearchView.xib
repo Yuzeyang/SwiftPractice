@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="bKE-MI-3hL" customClass="DBSearchView" customModule="DouBanMovie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="84"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAO-kp-OG7">
+                    <rect key="frame" x="20" y="27" width="115" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="115" id="I8a-A1-7Gw"/>
+                        <constraint firstAttribute="height" constant="20" id="Ube-fd-D6g"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="搜索电影..." drawsBackground="YES" id="TIb-Ot-ClY">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dce-U2-PkI">
+                    <rect key="frame" x="18" y="20" width="135" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1.5" id="AuR-H6-O4Y"/>
+                        <constraint firstAttribute="width" constant="131" id="vOu-cX-mRc"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="ILK-Uy-l1O">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d8o-Xp-udk">
+                    <rect key="frame" x="136" y="30" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="E8H-XO-W6A"/>
+                        <constraint firstAttribute="width" constant="15" id="Xdp-Bm-zKJ"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="searchButton" id="gac-yB-3N4"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Dce-U2-PkI" firstAttribute="leading" secondItem="gAO-kp-OG7" secondAttribute="leading" id="0mD-cf-tZm"/>
+                <constraint firstAttribute="height" constant="84" id="b5i-fT-TOI"/>
+                <constraint firstAttribute="width" constant="175" id="eIQ-8s-RNv"/>
+                <constraint firstItem="d8o-Xp-udk" firstAttribute="leading" secondItem="gAO-kp-OG7" secondAttribute="trailing" constant="1" id="fKm-Ts-1Ai"/>
+                <constraint firstItem="gAO-kp-OG7" firstAttribute="top" secondItem="bKE-MI-3hL" secondAttribute="top" constant="37" id="gxp-AB-nU2"/>
+                <constraint firstItem="Dce-U2-PkI" firstAttribute="top" secondItem="d8o-Xp-udk" secondAttribute="bottom" constant="8" id="h56-Nh-uDC"/>
+                <constraint firstItem="Dce-U2-PkI" firstAttribute="top" secondItem="gAO-kp-OG7" secondAttribute="bottom" constant="5" id="lTU-Gz-KVy"/>
+                <constraint firstItem="gAO-kp-OG7" firstAttribute="leading" secondItem="bKE-MI-3hL" secondAttribute="leading" constant="20" id="xbn-Qp-Iay"/>
+            </constraints>
+            <connections>
+                <outlet property="line" destination="Dce-U2-PkI" id="VGs-fg-jcB"/>
+                <outlet property="searchField" destination="gAO-kp-OG7" id="hTX-fP-t9J"/>
+            </connections>
+            <point key="canvasLocation" x="-174" y="171"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="searchButton" width="18" height="20"/>
+    </resources>
+</document>

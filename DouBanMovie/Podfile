@@ -1,9 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :osx, '10.10'
+platform :osx, '10.11'
 use_frameworks!
 
 target 'DouBanMovie' do
     pod 'Alamofire'
     pod 'SDWebImage'
     pod 'YYModel'
+    pod 'SnapKit', '~> 3.2.0'
 end

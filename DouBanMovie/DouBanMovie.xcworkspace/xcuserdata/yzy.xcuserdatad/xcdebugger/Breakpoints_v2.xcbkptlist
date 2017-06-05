@@ -27,54 +27,6 @@
             timestampString = "517890995.510344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "handleError(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static DouBanMovie.DBMovieService.(getUSBoxMovieWith (Swift.Optional&lt;(Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.Array&lt;DouBanMovie.DBMovieModel&gt;&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "DouBanMovie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yzy/Documents/GitHub/SwiftPractice/DouBanMovie/DouBanMovie/Main/DBMovieService.swift"
-                  timestampString = "517752239.262189"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "2612">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static DouBanMovie.DBMovieService.(getUSBoxMovieWith (Swift.Optional&lt;(Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.Array&lt;DouBanMovie.DBMovieModel&gt;&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "DouBanMovie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yzy/Documents/GitHub/SwiftPractice/DouBanMovie/DouBanMovie/Main/DBMovieService.swift"
-                  timestampString = "517752239.268053"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DouBanMovie/Main/DBMovieService.swift"
-            timestampString = "517890995.510344"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "getComingSoonWith(_:count:callback:)"
@@ -84,16 +36,58 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DouBanMovie/Common/SearchBar/DBSearchField.swift"
+            timestampString = "518161518.277975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "setUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DouBanMovie/Main/DBMovieService.swift"
-            timestampString = "517890995.510344"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DouBanMovie/Main/DBSearchView.swift"
+            timestampString = "518355974.533181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "handleError(_:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "setUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DouBanMovie/Main/DBSearchView.swift"
+            timestampString = "518355974.533181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

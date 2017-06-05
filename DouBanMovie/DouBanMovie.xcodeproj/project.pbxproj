@@ -22,6 +22,11 @@
 		5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */; };
 		5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */; };
 		5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */; };
+		5B6AB5AC1EE29B5700435CFC /* DBSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AB5AB1EE29B5700435CFC /* DBSearchView.swift */; };
+		5B6AB5AE1EE29B6200435CFC /* DBSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AB5AD1EE29B6200435CFC /* DBSearchView.xib */; };
+		5B6AB5B11EE2B92E00435CFC /* NSView+NibLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AB5B01EE2B92E00435CFC /* NSView+NibLoader.swift */; };
+		5BABD0B31EE24EAD00EADCCA /* DBSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */; };
+		5BABD0B71EE281E700EADCCA /* DBSearchFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */; };
 		C4FB7289AEF78980BE3C489C /* Pods_DouBanMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AB890A3C1BE1544CA88583 /* Pods_DouBanMovie.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +51,11 @@
 		5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B62B3D01ED3189E00BCD1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B62B3D21ED3189E00BCD1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B6AB5AB1EE29B5700435CFC /* DBSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchView.swift; sourceTree = "<group>"; };
+		5B6AB5AD1EE29B6200435CFC /* DBSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBSearchView.xib; sourceTree = "<group>"; };
+		5B6AB5B01EE2B92E00435CFC /* NSView+NibLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+NibLoader.swift"; sourceTree = "<group>"; };
+		5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchField.swift; sourceTree = "<group>"; };
+		5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchFieldCell.swift; sourceTree = "<group>"; };
 		82AB890A3C1BE1544CA88583 /* Pods_DouBanMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouBanMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2725D4AC6B2A69E509DEAE /* Pods-DouBanMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanMovie/Pods-DouBanMovie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +102,8 @@
 				5B26F5CB1ED675EF0073DBFD /* DBMovieFlowLayout.xib */,
 				5B26F5F31ED701130073DBFD /* DBMovieItem.swift */,
 				5B26F5F41ED701130073DBFD /* DBMovieItem.xib */,
+				5B6AB5AB1EE29B5700435CFC /* DBSearchView.swift */,
+				5B6AB5AD1EE29B6200435CFC /* DBSearchView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -135,12 +147,39 @@
 			isa = PBXGroup;
 			children = (
 				5B26F5C31ED6757F0073DBFD /* Main */,
+				5BABD09F1EDFE71E00EADCCA /* Common */,
 				5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */,
 				5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */,
 				5B62B3C91ED3189E00BCD1FC /* AppDelegate.swift */,
 				5B62B3D21ED3189E00BCD1FC /* Info.plist */,
 			);
 			path = DouBanMovie;
+			sourceTree = "<group>";
+		};
+		5B6AB5AF1EE2AF9300435CFC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AB5B01EE2B92E00435CFC /* NSView+NibLoader.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5BABD09F1EDFE71E00EADCCA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AB5AF1EE2AF9300435CFC /* Category */,
+				5BABD0B11EE24E7800EADCCA /* SearchBar */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5BABD0B11EE24E7800EADCCA /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */,
+				5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		74AC9DB3486C74D9168E15A0 /* Frameworks */ = {
@@ -226,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6AB5AE1EE29B6200435CFC /* DBSearchView.xib in Resources */,
 				5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */,
 				5B26F5F61ED701130073DBFD /* DBMovieItem.xib in Resources */,
 				5B62B3D11ED3189E00BCD1FC /* Main.storyboard in Resources */,
@@ -289,12 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BABD0B71EE281E700EADCCA /* DBSearchFieldCell.swift in Sources */,
 				5B26F5E71ED67BA10073DBFD /* DBMovieService.swift in Sources */,
+				5B6AB5B11EE2B92E00435CFC /* NSView+NibLoader.swift in Sources */,
 				5B26F5C91ED675C50073DBFD /* DBMainWindow.swift in Sources */,
 				5B26F5D01ED676520073DBFD /* DBActionCell.swift in Sources */,
+				5B6AB5AC1EE29B5700435CFC /* DBSearchView.swift in Sources */,
 				5B26F5F81ED7CD7D0073DBFD /* DBMovieModel.swift in Sources */,
 				5B26F5D11ED676520073DBFD /* DBMovieFlowLayout.swift in Sources */,
 				5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */,
+				5BABD0B31EE24EAD00EADCCA /* DBSearchField.swift in Sources */,
 				5B26F5C81ED675C50073DBFD /* DBMainViewController.swift in Sources */,
 				5B26F5F51ED701130073DBFD /* DBMovieItem.swift in Sources */,
 				5B26F5FA1EDA5CE70073DBFD /* DBBoxModel.swift in Sources */,
