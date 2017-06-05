@@ -8,9 +8,13 @@
 
 import Cocoa
 
+typealias SearchAction = (_ query: String) -> Void
+
 class DBSearchView: NSView {
     @IBOutlet weak var searchField: NSTextField!
     @IBOutlet weak var line: NSTextField!
+    
+    var searchAction: SearchAction?
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -19,10 +23,10 @@ class DBSearchView: NSView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUI()
+        initUI()
     }
     
-    func setUI() {
+    func initUI() {
         self.wantsLayer = true
         self.layer?.backgroundColor = NSColor.init(deviceRed: 206.0/255.0, green: 76.0/255.0, blue: 74.0/255.0, alpha: 1.0).cgColor
         line.layer?.backgroundColor = NSColor.white.cgColor
@@ -30,5 +34,11 @@ class DBSearchView: NSView {
         placeholder.addAttributes([NSForegroundColorAttributeName: NSColor.white, NSFontAttributeName: NSFont.systemFont(ofSize: 13.0)], range: NSRange.init(location: 0, length: placeholder.length))
         searchField.placeholderAttributedString = placeholder
         searchField.focusRingType = .none
-     }
+    }
+    
+    @IBAction func startSearch(_ sender: Any) {
+        if searchAction != nil {
+            searchAction!(searchField.stringValue)
+        }
+    }
 }

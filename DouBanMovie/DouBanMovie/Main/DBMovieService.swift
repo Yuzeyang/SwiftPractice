@@ -17,6 +17,7 @@ private let Top250API = "v2/movie/top250"
 private let WeeklyAPI = "v2/movie/weekly"
 private let USBoxAPI = "v2/movie/us_box"
 private let NewMoviesAPI = "v2/movie/new_movies"
+private let SearchAPI = "v2/movie/search"
 
 typealias InTheatersCallback = (_ error: NSError?, _ movies: [DBMovieModel]?) -> Void
 typealias ComingSoonCallback = (_ error: NSError?, _ movies: [DBMovieModel]?) -> Void
@@ -24,6 +25,7 @@ typealias Top250Callback = (_ error: NSError?, _ movies: [DBMovieModel]?) -> Voi
 typealias WeeklyCallback = (_ error: NSError?, _ movies: [DBMovieModel]?) -> Void
 typealias USBoxCallback = (_ error: NSError?, _ movies: [DBMovieModel]?) -> Void
 typealias NewMoviesCallback = (_ error: NSError?, _ movies: [DBMovieModel]?) -> Void
+typealias MovieSearchCallback = (_ error: NSError?, _ movie: [DBMovieModel]?) -> Void
 
 class DBMovieService: NSObject {
     
@@ -82,7 +84,7 @@ class DBMovieService: NSObject {
     }
     
     class func getWeeklyMovieWith(_ callback: InTheatersCallback?) {
-        Alamofire.request(baseURL + WeeklyAPI, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+        Alamofire.request(baseURL + WeeklyAPI)
             .responseJSON { (response) in
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
@@ -99,7 +101,7 @@ class DBMovieService: NSObject {
     }
     
     class func getUSBoxMovieWith(_ callback: InTheatersCallback?) {
-        Alamofire.request(baseURL + USBoxAPI, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+        Alamofire.request(baseURL + USBoxAPI)
             .responseJSON { (response) in
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
@@ -127,7 +129,7 @@ class DBMovieService: NSObject {
     }
     
     class func getNewMovieWith(_ callback: InTheatersCallback?) {
-        Alamofire.request(baseURL + NewMoviesAPI, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+        Alamofire.request(baseURL + NewMoviesAPI)
             .responseJSON { (response) in
                 guard let callback = callback else { return }
                 var movieList: [DBMovieModel]?
@@ -140,6 +142,25 @@ class DBMovieService: NSObject {
                 let movies = (response.result.value as! [String: Any])["subjects"] as Any
                 movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
                 callback(nil, movieList)
+        }
+    }
+    
+    class func searchMovieWith(_ name: String, _ callback: MovieSearchCallback?) {
+        let requestURL = baseURL + SearchAPI + "{\(name)}"
+        let params: Parameters = ["q": name]
+        Alamofire.request(baseURL + SearchAPI, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil)
+        .responseJSON { (response) in
+            guard let callback = callback else { return }
+            var movieList: [DBMovieModel]?
+            
+            if let error = handleError(response) {
+                callback(error, movieList)
+                return
+            }
+            
+            let movies = (response.result.value as! [String: Any])["subjects"] as Any
+            movieList = NSArray.yy_modelArray(with: DBMovieModel.self, json: movies) as? [DBMovieModel]
+            callback(nil, movieList)
         }
     }
     

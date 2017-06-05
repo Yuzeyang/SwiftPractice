@@ -85,6 +85,17 @@ extension DBMainViewController {
         movieCollectionView.dataSource = self
         
         movieSearchView = try! DBSearchView.view(withOwner: self) as! DBSearchView
+        movieSearchView?.searchAction = { (query) in
+            DBMovieService.searchMovieWith(query, { [weak self](error, data) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    return
+                }
+                self?.movieList.removeAll()
+                self?.movieList = data!
+                self?.movieCollectionView.reloadData()
+            })
+        }
         self.view.addSubview(movieSearchView!)
         movieSearchView?.snp.makeConstraints({ (make) -> Void in
             make.left.top.equalTo(0)
