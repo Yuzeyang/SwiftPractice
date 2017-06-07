@@ -13,6 +13,10 @@
             <rect key="frame" x="0.0" y="0.0" width="175" height="42"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swh-jy-E7R">
+                    <rect key="frame" x="16" y="2" width="143" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsy-PH-ptc">
                     <rect key="frame" x="52" y="11" width="70" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -22,11 +26,20 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdc-ib-KLp">
+                    <rect key="frame" x="29" y="8" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="playing" id="mrl-Gk-h6p"/>
+                </imageView>
             </subviews>
             <connections>
+                <outlet property="selectedView" destination="swh-jy-E7R" id="wXF-ZZ-zor"/>
                 <outlet property="title" destination="fsy-PH-ptc" id="ESp-PV-vBU"/>
             </connections>
-            <point key="canvasLocation" x="-430" y="-408"/>
+            <point key="canvasLocation" x="-430.5" y="-408"/>
         </tableCellView>
     </objects>
+    <resources>
+        <image name="playing" width="25" height="25"/>
+    </resources>
 </document>

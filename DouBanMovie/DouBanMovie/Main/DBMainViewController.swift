@@ -45,6 +45,7 @@ enum DBMovieType: String {
 class DBMainViewController: NSViewController {
     var movieList: [DBMovieModel] = []
     var currentIndex = 0
+    var lastIndex = 0
     
     var movieSearchView: DBSearchView?
     @IBOutlet weak var tableView: NSTableView! {
@@ -102,8 +103,20 @@ extension DBMainViewController {
             make.width.equalTo(174)
             make.height.equalTo(84)
         })
+        
+        let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
+        currentCell?.isSelected = true
     }
     
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        let tableView = notification.object as! NSTableView
+        
+        let lastCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
+        lastCell?.isSelected = false
+        currentIndex = tableView.selectedRow
+        let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
+        currentCell?.isSelected = true
+    }
     
     fileprivate func getInTheatersMovie() {
         DBMovieService.getInTheatersMovieWith("杭州") { [weak self](error, data) -> Void in
@@ -182,6 +195,7 @@ extension DBMainViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.make(withIdentifier: cellReuseId, owner: self) as? DBActionCell else { return nil }
         cell.title.stringValue = (DBMovieType.valueWith(row)?.rawValue)!
+        cell.isSelected = false
         return cell
     }
     
@@ -216,7 +230,6 @@ extension DBMainViewController: NSTableViewDelegate {
         
         return proposedSelectionIndexes
     }
-
 }
 
 extension DBMainViewController: NSTableViewDataSource {
