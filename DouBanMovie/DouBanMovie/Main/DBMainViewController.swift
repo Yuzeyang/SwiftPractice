@@ -65,6 +65,7 @@ class DBMainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        initDataSource()
     }
     
     override func viewDidAppear() {
@@ -108,6 +109,10 @@ extension DBMainViewController {
         currentCell?.isSelected = true
     }
     
+    fileprivate func initDataSource() {
+        getInTheatersMovie()
+    }
+    
     func tableViewSelectionDidChange(_ notification: Notification) {
         let tableView = notification.object as! NSTableView
         
@@ -116,6 +121,30 @@ extension DBMainViewController {
         currentIndex = tableView.selectedRow
         let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
         currentCell?.isSelected = true
+        
+        switch currentIndex {
+        case 0:
+            getInTheatersMovie()
+            break
+        case 1:
+            getComingSoonMovie()
+            break
+        case 2:
+            getTop250Movie()
+            break
+            /*case 3:
+             getWeeklyMovie()
+             break*/
+        case 3:
+            getUSBoxMovie()
+            break
+            /*case 5:
+             getNewxMovie()
+             break*/
+        default:
+            print("unknow type")
+            break
+        }
     }
     
     fileprivate func getInTheatersMovie() {
@@ -197,38 +226,6 @@ extension DBMainViewController: NSTableViewDelegate {
         cell.title.stringValue = (DBMovieType.valueWith(row)?.rawValue)!
         cell.isSelected = false
         return cell
-    }
-    
-    func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
-        var index = currentIndex
-        if proposedSelectionIndexes.first != nil {
-            index = proposedSelectionIndexes.first!
-        }
-        switch index {
-        case 0:
-            getInTheatersMovie()
-            break
-        case 1:
-            getComingSoonMovie()
-            break
-        case 2:
-            getTop250Movie()
-            break
-        /*case 3:
-            getWeeklyMovie()
-            break*/
-        case 3:
-            getUSBoxMovie()
-            break
-        /*case 5:
-            getNewxMovie()
-            break*/
-        default:
-            print("unknow type")
-            break
-        }
-        
-        return proposedSelectionIndexes
     }
 }
 
