@@ -10,8 +10,6 @@ import Cocoa
 
 class DBMovieFlowLayout: NSCollectionViewFlowLayout {
 
-    
-    
 }
 
 extension DBMovieFlowLayout: NSCollectionViewDelegateFlowLayout {

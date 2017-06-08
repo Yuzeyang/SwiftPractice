@@ -140,20 +140,12 @@ class MacActivityIndicator: NSView {
     
     public func startAnimationWith(_ view: NSView) {
         startAnimating()
-//        isHidden = true
         view.addSubview(self)
-//        NSAnimationContext.runAnimationGroup({ (context) in
-//            context.duration = 1.0
-//            self.animator().alphaValue = 0.0
-//        }) {
-//            self.isHidden = true
-//            self.alphaValue = 1.0
-//        }
     }
     
     public func stopAnimationWithSuperView() {
         NSAnimationContext.runAnimationGroup({ (context) in
-            context.duration = 1.0
+            context.duration = 0.8
             self.animator().alphaValue = 0.0
         }) {
             self.isHidden = true
