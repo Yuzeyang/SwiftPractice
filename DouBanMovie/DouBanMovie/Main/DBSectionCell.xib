@@ -9,24 +9,30 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <tableCellView id="wn0-Yf-jaQ">
+        <tableCellView id="wn0-Yf-jaQ" customClass="DBSectionCell" customModule="DouBanMovie" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="77"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kde-2L-LgK">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="77"/>
+                    <rect key="frame" x="26" y="30" width="174" height="17"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="2c5-Df-8Xw">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Main" id="2c5-Df-8Xw">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" red="0.23137254901960785" green="0.29803921568627451" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
             <connections>
+                <outlet property="sectionName" destination="Kde-2L-LgK" id="TuU-lV-GMA"/>
                 <outlet property="textField" destination="Kde-2L-LgK" id="2wD-fx-RkA"/>
             </connections>
             <point key="canvasLocation" x="-56" y="206.5"/>
         </tableCellView>
+        <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" id="LjQ-7X-LiD">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <point key="canvasLocation" x="272" y="84"/>
+        </visualEffectView>
     </objects>
 </document>

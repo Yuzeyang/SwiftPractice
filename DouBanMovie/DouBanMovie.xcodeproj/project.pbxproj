@@ -29,6 +29,7 @@
 		5B6AB5F11EE819AA00435CFC /* DBSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AB5F01EE819AA00435CFC /* DBSectionCell.xib */; };
 		5BABD0B31EE24EAD00EADCCA /* DBSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */; };
 		5BABD0B71EE281E700EADCCA /* DBSearchFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */; };
+		5BDD3B6D1EE982BA00636DD0 /* MacActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD3B6C1EE982BA00636DD0 /* MacActivityIndicator.swift */; };
 		C4FB7289AEF78980BE3C489C /* Pods_DouBanMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AB890A3C1BE1544CA88583 /* Pods_DouBanMovie.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		5B6AB5F01EE819AA00435CFC /* DBSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBSectionCell.xib; sourceTree = "<group>"; };
 		5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchField.swift; sourceTree = "<group>"; };
 		5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchFieldCell.swift; sourceTree = "<group>"; };
+		5BDD3B6C1EE982BA00636DD0 /* MacActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacActivityIndicator.swift; sourceTree = "<group>"; };
 		82AB890A3C1BE1544CA88583 /* Pods_DouBanMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouBanMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2725D4AC6B2A69E509DEAE /* Pods-DouBanMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouBanMovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouBanMovie/Pods-DouBanMovie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 		5BABD09F1EDFE71E00EADCCA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5BDD3B6B1EE982BA00636DD0 /* Loading */,
 				5B6AB5AF1EE2AF9300435CFC /* Category */,
 				5BABD0B11EE24E7800EADCCA /* SearchBar */,
 			);
@@ -186,6 +189,14 @@
 				5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		5BDD3B6B1EE982BA00636DD0 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				5BDD3B6C1EE982BA00636DD0 /* MacActivityIndicator.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		74AC9DB3486C74D9168E15A0 /* Frameworks */ = {
@@ -336,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDD3B6D1EE982BA00636DD0 /* MacActivityIndicator.swift in Sources */,
 				5BABD0B71EE281E700EADCCA /* DBSearchFieldCell.swift in Sources */,
 				5B26F5E71ED67BA10073DBFD /* DBMovieService.swift in Sources */,
 				5B6AB5B11EE2B92E00435CFC /* NSView+NibLoader.swift in Sources */,

@@ -61,6 +61,13 @@ class DBMainViewController: NSViewController {
             flowLayout?.itemSize = NSSize(width: 130, height: 263)
         }
     }
+    let toggle: MacActivityIndicator = {
+        let view = MacActivityIndicator()
+        view.direction = .anticlockwise
+        view.speed = 1.0
+        view.image = NSImage(named: "loading2")
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,12 +108,12 @@ extension DBMainViewController {
         self.view.addSubview(movieSearchView!)
         movieSearchView?.snp.makeConstraints({ (make) -> Void in
             make.left.top.equalTo(0)
-            make.width.equalTo(174)
+            make.width.equalTo(175)
             make.height.equalTo(84)
         })
+    
+        toggle.frame = NSRect(x: movieCollectionView.frame.width/2 + tableView.frame.width - 25, y: movieCollectionView.frame.midY - 25, width: 50, height: 50)
         
-        let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
-        currentCell?.isSelected = true
     }
     
     fileprivate func initDataSource() {
@@ -114,6 +121,9 @@ extension DBMainViewController {
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
+        movieList.removeAll()
+        movieCollectionView.reloadData()
+        
         let tableView = notification.object as! NSTableView
         
         let lastCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
@@ -148,7 +158,9 @@ extension DBMainViewController {
     }
     
     fileprivate func getInTheatersMovie() {
+        toggle.startAnimationWith(self.view)
         DBMovieService.getInTheatersMovieWith("杭州") { [weak self](error, data) -> Void in
+            self?.toggle.stopAnimationWithSuperView()
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -160,7 +172,9 @@ extension DBMainViewController {
     }
     
     fileprivate func getComingSoonMovie() {
+        toggle.startAnimationWith(self.view)
         DBMovieService.getComingSoonWith(0, count: 20) { [weak self](error, data) -> Void in
+            self?.toggle.stopAnimationWithSuperView()
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -172,7 +186,9 @@ extension DBMainViewController {
     }
     
     fileprivate func getTop250Movie() {
+        toggle.startAnimationWith(self.view)
         DBMovieService.getTop250With(0, count: 20) { [weak self](error, data) -> Void in
+            self?.toggle.stopAnimationWithSuperView()
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -196,7 +212,9 @@ extension DBMainViewController {
     }*/
     
     fileprivate func getUSBoxMovie() {
+        toggle.startAnimationWith(self.view)
         DBMovieService.getUSBoxMovieWith { [weak self](error, data) -> Void in
+            self?.toggle.stopAnimationWithSuperView()
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -224,7 +242,7 @@ extension DBMainViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.make(withIdentifier: cellReuseId, owner: self) as? DBActionCell else { return nil }
         cell.title.stringValue = (DBMovieType.valueWith(row)?.rawValue)!
-        cell.isSelected = false
+        cell.isSelected = (currentIndex == row)
         return cell
     }
 }

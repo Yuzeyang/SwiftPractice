@@ -9,6 +9,7 @@
 import Cocoa
 
 class DBSectionCell: NSTableCellView {
+    @IBOutlet weak var sectionName: NSTextField!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

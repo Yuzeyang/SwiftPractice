@@ -737,13 +737,13 @@
                                 </scroller>
                             </scrollView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f4-ZH-Kyw">
-                                <rect key="frame" x="174" y="0.0" width="726" height="650"/>
+                                <rect key="frame" x="175" y="0.0" width="725" height="650"/>
                                 <clipView key="contentView" drawsBackground="NO" id="maw-7m-g4m">
-                                    <rect key="frame" x="0.0" y="0.0" width="726" height="650"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="725" height="650"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="giu-sA-7rL">
-                                            <rect key="frame" x="0.0" y="0.0" width="726" height="650"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="725" height="650"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="kqY-wl-lhe" customClass="DBMovieFlowLayout" customModule="DouBanMovie" customModuleProvider="target">
                                                 <size key="itemSize" width="65" height="123"/>
@@ -754,10 +754,10 @@
                                     </subviews>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="726" id="BPg-Pn-Hia"/>
+                                    <constraint firstAttribute="width" constant="725" id="BPg-Pn-Hia"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="MIT-Lx-AO9">
-                                    <rect key="frame" x="1" y="143" width="248" height="16"/>
+                                    <rect key="frame" x="0.0" y="634" width="725" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CWV-Ff-1WR">
