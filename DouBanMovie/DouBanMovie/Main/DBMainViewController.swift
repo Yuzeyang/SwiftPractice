@@ -122,26 +122,18 @@ extension DBMainViewController {
             make.height.equalTo(84)
         })
         headerView?.currentType.stringValue = (DBMovieType.valueWith(currentIndex)?.rawValue)!
+        headerView?.refreshHandler = { [weak self] in
+            self?.movieList.removeAll()
+            self?.movieCollectionView.reloadData()
+            self?.getMovies()
+        }
     }
     
     fileprivate func initDataSource() {
-        getInTheatersMovie()
+        getMovies()
     }
     
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        movieList.removeAll()
-        movieCollectionView.reloadData()
-        
-        let tableView = notification.object as! NSTableView
-        
-        let lastCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
-        lastCell?.isSelected = false
-        currentIndex = tableView.selectedRow
-        let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
-        currentCell?.isSelected = true
-        
-        headerView?.currentType.stringValue = (DBMovieType.valueWith(currentIndex)?.rawValue)!
-        
+    func getMovies() {
         switch currentIndex {
         case 0:
             getInTheatersMovie()
@@ -165,6 +157,23 @@ extension DBMainViewController {
             print("unknow type")
             break
         }
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        movieList.removeAll()
+        movieCollectionView.reloadData()
+        
+        let tableView = notification.object as! NSTableView
+        
+        let lastCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
+        lastCell?.isSelected = false
+        currentIndex = tableView.selectedRow
+        let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
+        currentCell?.isSelected = true
+        
+        headerView?.currentType.stringValue = (DBMovieType.valueWith(currentIndex)?.rawValue)!
+        
+        getMovies()
     }
     
     fileprivate func getInTheatersMovie() {

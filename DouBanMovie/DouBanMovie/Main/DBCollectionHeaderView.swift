@@ -8,9 +8,16 @@
 
 import Cocoa
 
+typealias RefreshHandler = () -> Void
+
 class DBCollectionHeaderView: NSView {
     @IBOutlet weak var currentType: NSTextField!
-
+    @IBAction func refreshAction(_ sender: Any) {
+        refreshHandler?()
+    }
+    
+    var refreshHandler: RefreshHandler?
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
