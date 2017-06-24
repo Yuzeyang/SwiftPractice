@@ -45,7 +45,6 @@ enum DBMovieType: String {
 class DBMainViewController: NSViewController {
     var movieList: [DBMovieModel] = []
     var currentIndex = 0
-    var lastIndex = 0
     
     var movieSearchView: DBSearchView?
     @IBOutlet weak var tableView: NSTableView! {
@@ -58,16 +57,17 @@ class DBMainViewController: NSViewController {
             movieCollectionView.register(DBMovieItem.self, forItemWithIdentifier: itemReuseId)
             
             let flowLayout = movieCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout
-            flowLayout?.itemSize = NSSize(width: 130, height: 263)
+            flowLayout?.itemSize = NSSize(width: 150, height: 263)
         }
     }
     let toggle: MacActivityIndicator = {
         let view = MacActivityIndicator()
         view.direction = .anticlockwise
         view.speed = 1.0
-        view.image = NSImage(named: "loading2")
+        view.image = NSImage(named: "loading")
         return view
     }()
+    var headerView: DBCollectionHeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +114,14 @@ extension DBMainViewController {
     
         toggle.frame = NSRect(x: movieCollectionView.frame.width/2 + tableView.frame.width - 25, y: movieCollectionView.frame.midY - 25, width: 50, height: 50)
         
+        headerView = try! DBCollectionHeaderView.view(withOwner: self) as! DBCollectionHeaderView
+        view.addSubview(headerView!)
+        headerView?.snp.makeConstraints({ (make) in
+            make.top.right.equalTo(0)
+            make.width.equalTo(725)
+            make.height.equalTo(84)
+        })
+        headerView?.currentType.stringValue = (DBMovieType.valueWith(currentIndex)?.rawValue)!
     }
     
     fileprivate func initDataSource() {
@@ -131,6 +139,8 @@ extension DBMainViewController {
         currentIndex = tableView.selectedRow
         let currentCell = tableView.view(atColumn: 0, row: currentIndex, makeIfNecessary: true) as? DBActionCell
         currentCell?.isSelected = true
+        
+        headerView?.currentType.stringValue = (DBMovieType.valueWith(currentIndex)?.rawValue)!
         
         switch currentIndex {
         case 0:
@@ -158,7 +168,7 @@ extension DBMainViewController {
     }
     
     fileprivate func getInTheatersMovie() {
-        toggle.startAnimationWith(self.view)
+        toggle.startAnimationWith(view)
         DBMovieService.getInTheatersMovieWith("杭州") { [weak self](error, data) -> Void in
             self?.toggle.stopAnimationWithSuperView()
             if error != nil {
@@ -172,7 +182,7 @@ extension DBMainViewController {
     }
     
     fileprivate func getComingSoonMovie() {
-        toggle.startAnimationWith(self.view)
+        toggle.startAnimationWith(view)
         DBMovieService.getComingSoonWith(0, count: 20) { [weak self](error, data) -> Void in
             self?.toggle.stopAnimationWithSuperView()
             if error != nil {
@@ -186,7 +196,7 @@ extension DBMainViewController {
     }
     
     fileprivate func getTop250Movie() {
-        toggle.startAnimationWith(self.view)
+        toggle.startAnimationWith(view)
         DBMovieService.getTop250With(0, count: 20) { [weak self](error, data) -> Void in
             self?.toggle.stopAnimationWithSuperView()
             if error != nil {
@@ -212,7 +222,7 @@ extension DBMainViewController {
     }*/
     
     fileprivate func getUSBoxMovie() {
-        toggle.startAnimationWith(self.view)
+        toggle.startAnimationWith(view)
         DBMovieService.getUSBoxMovieWith { [weak self](error, data) -> Void in
             self?.toggle.stopAnimationWithSuperView()
             if error != nil {

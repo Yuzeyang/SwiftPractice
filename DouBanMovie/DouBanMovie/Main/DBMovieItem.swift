@@ -9,11 +9,7 @@
 import Cocoa
 
 class DBMovieItem: NSCollectionViewItem {
-    @IBOutlet weak var cover: NSImageView! {
-        didSet {
-            cover.layer?.contentsGravity = kCAGravityResizeAspectFill
-        }
-    }
+    @IBOutlet weak var cover: NSImageView!
     @IBOutlet weak var movieName: NSTextField!
     @IBOutlet weak var movieType: NSTextField!
     @IBOutlet weak var year: NSTextField!

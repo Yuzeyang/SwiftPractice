@@ -16,7 +16,6 @@ class DBActionCell: NSTableCellView {
     var isSelected: Bool! = false {
         didSet {
             selectedView.isHidden = !isSelected
-            Swift.print(selectedView.isHidden)
         }
     }
     

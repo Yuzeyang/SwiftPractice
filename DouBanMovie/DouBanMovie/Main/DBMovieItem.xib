@@ -18,15 +18,15 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="130" height="263"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="263"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kjt-DV-KCK">
-                    <rect key="frame" x="0.0" y="68" width="130" height="195"/>
+                    <rect key="frame" x="0.0" y="68" width="150" height="195"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="dRg-YP-d0D"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-eT-Z9c">
-                    <rect key="frame" x="-2" y="34" width="134" height="17"/>
+                    <rect key="frame" x="-2" y="34" width="154" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="ahD-oC-hHz"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kei-S8-ipC">
-                    <rect key="frame" x="-2" y="17" width="134" height="17"/>
+                    <rect key="frame" x="-2" y="17" width="154" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="2oI-U9-IZD"/>
                     </constraints>
@@ -48,7 +48,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpG-dx-gNJ">
-                    <rect key="frame" x="-2" y="0.0" width="134" height="17"/>
+                    <rect key="frame" x="-2" y="0.0" width="154" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="aYX-aa-aas"/>
                     </constraints>
