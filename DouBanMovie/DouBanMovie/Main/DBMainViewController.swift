@@ -55,7 +55,7 @@ class DBMainViewController: NSViewController {
     @IBOutlet weak var movieCollectionView: NSCollectionView! {
         didSet {
             movieCollectionView.register(DBMovieItem.self, forItemWithIdentifier: itemReuseId)
-            
+            movieCollectionView.isSelectable = true
             let flowLayout = movieCollectionView.collectionViewLayout as? NSCollectionViewFlowLayout
             flowLayout?.itemSize = NSSize(width: 150, height: 263)
         }
@@ -255,6 +255,7 @@ extension DBMainViewController {
             self?.movieCollectionView.reloadData()
         }
     }*/
+    
 }
 
 extension DBMainViewController: NSTableViewDelegate {
@@ -273,7 +274,12 @@ extension DBMainViewController: NSTableViewDataSource {
 }
 
 extension DBMainViewController: NSCollectionViewDelegate {
-    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        collectionView.deselectItems(at: indexPaths)
+        
+        let detailController = NSStoryboard(name: "DBMovieDetailController", bundle: nil).instantiateController(withIdentifier: "detail") as! DBMovieDetailController
+        self.presentViewController(detailController, animator: DBViewControllerAnimator())
+    }
 }
 
 extension DBMainViewController: NSCollectionViewDataSource {

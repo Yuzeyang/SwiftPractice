@@ -27,6 +27,11 @@
 		5B6AB5B11EE2B92E00435CFC /* NSView+NibLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AB5B01EE2B92E00435CFC /* NSView+NibLoader.swift */; };
 		5B6AB5EF1EE8199C00435CFC /* DBSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AB5EE1EE8199C00435CFC /* DBSectionCell.swift */; };
 		5B6AB5F11EE819AA00435CFC /* DBSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AB5F01EE819AA00435CFC /* DBSectionCell.xib */; };
+		5B784ADB1EFF8C4E00AC53D0 /* DBMovieDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B784AD91EFF8C4E00AC53D0 /* DBMovieDetailController.storyboard */; };
+		5B784ADC1EFF8C4E00AC53D0 /* DBMovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B784ADA1EFF8C4E00AC53D0 /* DBMovieDetailController.swift */; };
+		5B784ADF1EFF8D3200AC53D0 /* DBViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B784ADE1EFF8D3200AC53D0 /* DBViewControllerAnimator.swift */; };
+		5B827E1B1F07929F00DA3D03 /* DBMovieDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B827E1A1F07929F00DA3D03 /* DBMovieDetailService.swift */; };
+		5B827E1E1F07E22D00DA3D03 /* DBMovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B827E1D1F07E22D00DA3D03 /* DBMovieDetailModel.swift */; };
 		5BABD0B31EE24EAD00EADCCA /* DBSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */; };
 		5BABD0B71EE281E700EADCCA /* DBSearchFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */; };
 		5BDD3B6D1EE982BA00636DD0 /* MacActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDD3B6C1EE982BA00636DD0 /* MacActivityIndicator.swift */; };
@@ -61,6 +66,11 @@
 		5B6AB5B01EE2B92E00435CFC /* NSView+NibLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+NibLoader.swift"; sourceTree = "<group>"; };
 		5B6AB5EE1EE8199C00435CFC /* DBSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSectionCell.swift; sourceTree = "<group>"; };
 		5B6AB5F01EE819AA00435CFC /* DBSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBSectionCell.xib; sourceTree = "<group>"; };
+		5B784AD91EFF8C4E00AC53D0 /* DBMovieDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DBMovieDetailController.storyboard; sourceTree = "<group>"; };
+		5B784ADA1EFF8C4E00AC53D0 /* DBMovieDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieDetailController.swift; sourceTree = "<group>"; };
+		5B784ADE1EFF8D3200AC53D0 /* DBViewControllerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBViewControllerAnimator.swift; sourceTree = "<group>"; };
+		5B827E1A1F07929F00DA3D03 /* DBMovieDetailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieDetailService.swift; sourceTree = "<group>"; };
+		5B827E1D1F07E22D00DA3D03 /* DBMovieDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMovieDetailModel.swift; sourceTree = "<group>"; };
 		5BABD0B21EE24EAD00EADCCA /* DBSearchField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchField.swift; sourceTree = "<group>"; };
 		5BABD0B61EE281E700EADCCA /* DBSearchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBSearchFieldCell.swift; sourceTree = "<group>"; };
 		5BDD3B6C1EE982BA00636DD0 /* MacActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacActivityIndicator.swift; sourceTree = "<group>"; };
@@ -161,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				5B26F5C31ED6757F0073DBFD /* Main */,
+				5B784AD71EFF8BED00AC53D0 /* Detail */,
 				5BABD09F1EDFE71E00EADCCA /* Common */,
 				5B62B3CD1ED3189E00BCD1FC /* Assets.xcassets */,
 				5B62B3CF1ED3189E00BCD1FC /* Main.storyboard */,
@@ -176,6 +187,50 @@
 				5B6AB5B01EE2B92E00435CFC /* NSView+NibLoader.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		5B784AD71EFF8BED00AC53D0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5B827E1C1F079C8300DA3D03 /* Model */,
+				5B784AE01EFFA00900AC53D0 /* Service */,
+				5B784ADD1EFF8C5200AC53D0 /* View */,
+				5B784AD81EFF8C0000AC53D0 /* ViewController */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		5B784AD81EFF8C0000AC53D0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B784ADA1EFF8C4E00AC53D0 /* DBMovieDetailController.swift */,
+				5B784AD91EFF8C4E00AC53D0 /* DBMovieDetailController.storyboard */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5B784ADD1EFF8C5200AC53D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B784ADE1EFF8D3200AC53D0 /* DBViewControllerAnimator.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5B784AE01EFFA00900AC53D0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5B827E1A1F07929F00DA3D03 /* DBMovieDetailService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		5B827E1C1F079C8300DA3D03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B827E1D1F07E22D00DA3D03 /* DBMovieDetailModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		5BABD09F1EDFE71E00EADCCA /* Common */ = {
@@ -290,6 +345,7 @@
 			files = (
 				5B6AB5AE1EE29B6200435CFC /* DBSearchView.xib in Resources */,
 				5BDD3B711EE992C200636DD0 /* DBCollectionHeaderView.xib in Resources */,
+				5B784ADB1EFF8C4E00AC53D0 /* DBMovieDetailController.storyboard in Resources */,
 				5B62B3CE1ED3189E00BCD1FC /* Assets.xcassets in Resources */,
 				5B6AB5F11EE819AA00435CFC /* DBSectionCell.xib in Resources */,
 				5B26F5F61ED701130073DBFD /* DBMovieItem.xib in Resources */,
@@ -355,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BDD3B6D1EE982BA00636DD0 /* MacActivityIndicator.swift in Sources */,
+				5B784ADF1EFF8D3200AC53D0 /* DBViewControllerAnimator.swift in Sources */,
 				5BABD0B71EE281E700EADCCA /* DBSearchFieldCell.swift in Sources */,
 				5B26F5E71ED67BA10073DBFD /* DBMovieService.swift in Sources */,
 				5B6AB5B11EE2B92E00435CFC /* NSView+NibLoader.swift in Sources */,
@@ -364,11 +421,14 @@
 				5B6AB5AC1EE29B5700435CFC /* DBSearchView.swift in Sources */,
 				5B26F5F81ED7CD7D0073DBFD /* DBMovieModel.swift in Sources */,
 				5B26F5D11ED676520073DBFD /* DBMovieFlowLayout.swift in Sources */,
+				5B784ADC1EFF8C4E00AC53D0 /* DBMovieDetailController.swift in Sources */,
 				5B62B3CA1ED3189E00BCD1FC /* AppDelegate.swift in Sources */,
+				5B827E1E1F07E22D00DA3D03 /* DBMovieDetailModel.swift in Sources */,
 				5BABD0B31EE24EAD00EADCCA /* DBSearchField.swift in Sources */,
 				5B26F5C81ED675C50073DBFD /* DBMainViewController.swift in Sources */,
 				5BDD3B6F1EE992B900636DD0 /* DBCollectionHeaderView.swift in Sources */,
 				5B26F5F51ED701130073DBFD /* DBMovieItem.swift in Sources */,
+				5B827E1B1F07929F00DA3D03 /* DBMovieDetailService.swift in Sources */,
 				5B26F5FA1EDA5CE70073DBFD /* DBBoxModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
